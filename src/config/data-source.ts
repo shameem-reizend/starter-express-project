@@ -2,6 +2,9 @@ import { DataSource } from "typeorm";
 import dotenv from "dotenv";
 dotenv.config();
 
+import { User } from "../entities/User.entity";
+
+
 export const AppDataSource = new DataSource({
     type: "postgres",
     host: process.env.DB_HOST,
@@ -12,5 +15,5 @@ export const AppDataSource = new DataSource({
     synchronize: true,
     logging: false,
 
-    entities: [],
+    entities: [User],
 });
